@@ -64,7 +64,7 @@ body {
     overflow: hidden;
     
     /* LLAMADO A TU FOTO */
-    background-image: url('/estilos/img/Boda.jpg'); 
+    background-image: url('img/Boda.jpg'); 
     
     /* Propiedades para que la foto no se repita, se centre y cubra toda la pantalla */
     background-repeat: no-repeat;
