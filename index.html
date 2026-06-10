@@ -1,146 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nuestra Boda</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header class="hero">
-        
-        <div class="hero-overlay"></div>
-        
-        <div class="hero-content">
-            <p class="hero-subtitle">¡Nos Casamos!</p>
-            <h1 class="hero-title">Elias Lopes & Nara Baez</h1>
-            <p class="hero-date-text">Falta muy poco para el gran día</p>
-            
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-subtitle">¡Nos Casamos!</p>
+        <h1 class="hero-title">Elias Lopes & Nara Baez</h1>
+        <p class="hero-date-text">Falta muy poco para el gran día</p>
+
         <div class="countdown-container">
-                <div class="countdown-box">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">Días</span>
-                </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">Horas</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">Min</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">Seg</span>
-            </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
         </div>
-        </div>
+      </div>
     </header>
 
     <section class="section story-section">
-        <div class="container text-center">
-            <h2 class="section-title">Nuestra Historia</h2>
-            <p class="story-text">
-                "Hay momentos en la vida que son inolvidables, y compartirlos con las personas que más queremos los hace aún más especiales. Después de recorrer un camino hermoso juntos, decidimos dar el paso más importante y queremos que seas parte de nuestra gran noche."
-            </p>
-            <div class="divider"></div>
-        </div>
+      <div class="container text-center">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p class="story-text">
+          "Hay momentos en la vida que son inolvidables, y compartirlos con las
+          personas que más queremos los hace aún más especiales. Después de
+          recorrer un camino hermoso juntos, decidimos dar el paso más
+          importante y queremos que seas parte de nuestra gran noche."
+        </p>
+        <div class="divider"></div>
+      </div>
     </section>
 
     <section class="section details-section">
-        <div class="container grid-2">
-            
-            <div class="card">
-                <div class="card-icon">✨</div>
-                <h3 class="card-title">La Ceremonia</h3>
-                <p class="card-info">Sábado 14 de Noviembre - 18:30 hs</p>
-                <p class="card-address">Dirección del Civil, Ciudad</p>
-                <a href="#" target="_blank" class="btn btn-dark">Ver en Google Maps</a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🥂</div>
-                <h3 class="card-title">La Fiesta</h3>
-                <p class="card-info">Sábado 14 de Noviembre - 20:00 hs</p>
-                <p class="card-address">Salón de Eventos "Nombre", Dirección, Ciudad</p>
-                <a href="#" target="_blank" class="btn btn-dark">Cómo llegar</a>
-            </div>
-
+      <div class="container grid-2">
+        <div class="card">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">La Ceremonia</h3>
+          <p class="card-info">Sábado 14 de Noviembre - 18:30 hs</p>
+          <p class="card-address">Dirección del Civil, Ciudad</p>
+          <a href="#" target="_blank" class="btn btn-dark"
+            >Ver en Google Maps</a
+          >
         </div>
+
+        <div class="card">
+          <div class="card-icon">🥂</div>
+          <h3 class="card-title">La Fiesta</h3>
+          <p class="card-info">Sábado 14 de Noviembre - 20:00 hs</p>
+          <p class="card-address">
+            Salón de Eventos "Nombre", Dirección, Ciudad
+          </p>
+          <a href="#" target="_blank" class="btn btn-dark">Cómo llegar</a>
+        </div>
+      </div>
     </section>
 
     <section class="section rsvp-section">
-        <div class="container-small">
-            <div class="text-center mb-3">
-                <h2 class="section-title">Confirmación de Asistencia</h2>
-                <p class="section-subtitle">Por favor, confirmanos tu presencia antes del 15 de Octubre.</p>
-            </div>
-
-            <form class="rsvp-form" id="wedding-form">
-                
-            <div class="form-group">
-                <label for="name" class="form-label">Tu Nombre y Apellido</label>
-                <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez" class="form-input">
-            </div>
-
-            <div class="form-group">
-                <label for="guests-count" class="form-label">¿Venís con acompañantes? (Pareja / Hijos)</label>
-                <select id="guests-count" name="guests_count" class="form-select">
-                    <option value="0">Voy solo/a</option>
-                    <option value="1">1 acompañante</option>
-                    <option value="2">2 acompañantes</option>
-                    <option value="3">3 acompañantes</option>
-                    <option value="4">4 acompañantes</option>
-                    <option value="5">5 acompañantes</option>
-                </select>
-            </div>
-
-        <div id="dynamic-guests-container"></div>
-
-                <div class="form-group">
-                    <label class="form-label">¿Asistirá al evento?</label>
-                    <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="attendance" value="si" checked class="form-radio">
-                            <span>Sí, ¡allí estaré!</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="attendance" value="no" class="form-radio">
-                            <span>No podré asistir</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="menu" class="form-label">Preferencia de Menú</label>
-                    <select id="menu" name="menu" class="form-select">
-                        <option value="comun">Menú Tradicional</option>
-                        <option value="vegetariano">Vegetariano / Vegano</option>
-                        <option value="celiaco">Celíaco (Sin TACC)</option>
-                        <option value="intolerante">Intolerancia a la lactosa</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message" class="form-label">Mensaje para los novios (Opcional)</label>
-                    <textarea id="message" name="message" rows="3" placeholder="Dejales una linda dedicatoria..." class="form-textarea"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-block">Confirmar Asistencia</button>
-                
-            </form>
+      <div class="container-small">
+        <div class="text-center mb-3" id="rsvp-header">
+          <h2 class="section-title">Confirmación de Asistencia</h2>
+          <p class="section-subtitle">
+            Por favor, confirmanos tu presencia antes del 15 de Octubre.
+          </p>
         </div>
+
+        <form class="rsvp-form" id="wedding-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Tu Nombre y Apellido</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Ej: Juan Pérez"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="guests-count" class="form-label"
+              >¿Venís con acompañantes? (Pareja / Hijos)</label
+            >
+            <select id="guests-count" name="guests_count" class="form-select">
+              <option value="0">Voy solo/a</option>
+              <option value="1">1 acompañante</option>
+              <option value="2">2 acompañantes</option>
+              <option value="3">3 acompañantes</option>
+              <option value="4">4 acompañantes</option>
+              <option value="5">5 acompañantes</option>
+            </select>
+          </div>
+
+          <div id="dynamic-guests-container"></div>
+
+          <div class="form-group">
+            <label class="form-label">¿Asistirá al evento?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="si"
+                  checked
+                  class="form-radio"
+                />
+                <span>Sí, ¡allí estaré!</span>
+              </label>
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="no"
+                  class="form-radio"
+                />
+                <span>No podré asistir</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="menu" class="form-label">Preferencia de Menú</label>
+            <select id="menu" name="menu" class="form-select">
+              <option value="comun">Menú Tradicional</option>
+              <option value="vegetariano">Vegetariano / Vegano</option>
+              <option value="celiaco">Celíaco (Sin TACC)</option>
+              <option value="intolerante">Intolerancia a la lactosa</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label"
+              >Mensaje para los novios (Opcional)</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              placeholder="Dejales una linda dedicatoria..."
+              class="form-textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Confirmar Asistencia
+          </button>
+        </form> <div
+          id="success-message"
+          style="display: none; text-align: center; padding: 30px 10px"
+        >
+          <h3
+            style="
+              font-family: var(--font-serif);
+              color: var(--accent-color);
+              font-size: 2rem;
+              margin-bottom: 15px;
+            "
+          >
+            ¡Muchas gracias!
+          </h3>
+          <p
+            style="
+              font-size: 1.1rem;
+              color: var(--text-main);
+              margin-bottom: 5px;
+            "
+          >
+            Tu confirmación fue recibida con éxito.
+          </p>
+          <p
+            style="
+              font-family: var(--font-serif);
+              font-style: italic;
+              font-size: 1.3rem;
+              color: var(--accent-color);
+              margin-top: 20px;
+            "
+          >
+            ¡Los esperamos para celebrar juntos! 🥂
+          </p>
+        </div>
+
+      </div>
     </section>
 
     <footer class="footer">
-        <p class="footer-title">Elias Lopez & Nara Baez</p>
-        <p>© 2026 - Hecho con ❤️ para una noche mágica</p>
+      <p class="footer-title">Elias Lopez & Nara Baez</p>
+      <p>© 2026 - Hecho con ❤️ para una noche mágica</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
