@@ -133,7 +133,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Cuenta regresiva */
+/* Cuenta regresiva adaptada por defecto a celulares */
 .countdown-container {
     display: flex;
     justify-content: center;
@@ -205,7 +205,6 @@ body {
     gap: 30px;
 }
 
-/* Modificación para soportar 3 columnas */
 .grid-3 {
     display: grid;
     grid-template-columns: 1fr; /* En celulares va uno abajo del otro */
@@ -369,10 +368,8 @@ body {
 }
 
 /* ==========================================================================
-   7. MEDIA QUERIES (RESPONSIVE)
+   7. MEDIA QUERIES (RESPONSIVE PARA TABLETS Y PC)
    ========================================================================== */
-
-/* Para tablets y computadoras (Pantallas desde 768px de ancho) */
 @media (min-width: 768px) {
     .hero-title {
         font-size: 5rem;
@@ -386,45 +383,48 @@ body {
         font-size: 2.5rem;
     }
     
-    /* Pasa las tarjetas de estar una abajo de la otra a dos columnas juntas */
     .grid-2 {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+        gap: 30px;
     }
     
     .rsvp-form {
         padding: 50px 40px;
     }
 
-    @media (min-width: 768px) {
-    /* ... Tus otras reglas se quedan igual ... */
-
-    /* Agregá esto acá adentro de las llaves del media query */
-    .grid-3 {
-        grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales en PC */
-        gap: 30px;
+    /* Agranda el contador en pantallas grandes */
+    .countdown-box {
+        width: 80px;
+        padding: 12px;
+    }
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+    .countdown-label {
+        font-size: 0.7rem;
     }
 }
-}
+
 /* ==========================================================================
    8. AJUSTES EXCLUSIVOS PARA ENCUADRE EN CELULARES
    ========================================================================== */
 @media (max-width: 767px) {
-    /* Si a la foto se le corta la cabeza, usá esta clase (empuja la foto hacia abajo) */
     .encuadre-arriba img {
         object-position: center top !important;
     }
 
-    /* Si querés que enfoque un poquito más abajo del centro */
     .encuadre-abajo img {
         object-position: center bottom !important;
     }
 
-    /* Si querés graduarlo fino con porcentajes (ej: 25% desde arriba) */
     .encuadre-medio-alto img {
         object-position: center 25% !important;
     }
-    /* Esto se aplica SOLO en celulares */
 
     .hero-title span {
         display: block; /* Fuerza el salto de línea en celulares */
@@ -432,8 +432,28 @@ body {
     }
     
     .hero-connector {
-        font-size: 0.8em; /* Hace el '&' un poquito más sutil si querés */
-        margin: 5px 0;    /* Le da un toque de espacio arriba y abajo */
+        font-size: 0.8em;
+        margin: 5px 0;
     }
+}
 
+/* ==========================================================================
+   9. CONTROL DE IMÁGENES RESPONSIVE (PC / CELULAR)
+   ========================================================================== */
+/* Por defecto (en celulares): ocultamos las de PC y mostramos las de celu */
+.solo-pc { 
+    display: none !important; 
+}
+.solo-celu { 
+    display: block !important; 
+}
+
+/* En pantallas grandes (Computadoras) */
+@media (min-width: 768px) {
+    .solo-pc { 
+        display: block !important; 
+    }
+    .solo-celu { 
+        display: none !important; 
+    }
 }
