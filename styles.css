@@ -93,7 +93,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center center;
 }
 
 .hero-overlay {
@@ -137,8 +137,8 @@ body {
 .countdown-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 8px; /* Menos espacio entre cajitas en celu */
+    margin-top: 20px;
 }
 
 .countdown-box {
@@ -146,23 +146,23 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 8px;
-    padding: 12px;
-    width: 80px;
+    padding: 8px 4px; /* Más compacto */
+    width: 65px; /* Más angosto para que entre cómodo en cualquier celu */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .countdown-number {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* Número más chico en celu */
     font-weight: 600;
 }
 
 .countdown-label {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.6rem; /* Etiqueta sutil */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 2px;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
 }
 
 /* ==========================================================================
