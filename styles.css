@@ -52,7 +52,7 @@ body {
 }
 
 /* ==========================================================================
-   2. PORTADA (HERO) CON IMAGEN DE FONDO
+   2. PORTADA (HERO) CON CARRUSEL DE FONDO (CONTENIDO EN HTML)
    ========================================================================== */
 .hero {
     position: relative;
@@ -62,26 +62,50 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
-    /* LLAMADO A TU FOTO */
-    background-image: url('img/Boda.jpg'); 
-    
-    /* Propiedades para que la foto no se repita, se centre y cubra toda la pantalla */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+}
+
+/* Caja madre de las imágenes (ocupa todo el fondo del header) */
+.carrusel-slides {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Queda abajo de la capa oscura y el texto */
+}
+
+/* Cada slide individual */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out; /* Transición de desvanecimiento suave */
+}
+
+/* Cuando JS le agrega la clase 'active', se vuelve visible */
+.slide.active {
+    opacity: 1;
+}
+
+/* Estilos para que la imagen cubra todo el fondo sin romperse */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.45); /* Capa oscura por encima de la foto */
-    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.45); /* Capa oscura por encima de las fotos */
+    z-index: 10; /* Arriba de las fotos, abajo del texto */
 }
 
 .hero-content {
     position: relative;
-    z-index: 20;
+    z-index: 20; /* Arriba de todo para que sea clickeable y legible */
     text-align: center;
     color: #ffffff;
     padding: 0 20px;
@@ -178,6 +202,13 @@ body {
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Modificación para soportar 3 columnas */
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr; /* En celulares va uno abajo del otro */
     gap: 30px;
 }
 
@@ -364,4 +395,14 @@ body {
     .rsvp-form {
         padding: 50px 40px;
     }
+
+    @media (min-width: 768px) {
+    /* ... Tus otras reglas se quedan igual ... */
+
+    /* Agregá esto acá adentro de las llaves del media query */
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales en PC */
+        gap: 30px;
+    }
+}
 }
