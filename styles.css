@@ -406,3 +406,34 @@ body {
     }
 }
 }
+/* ==========================================================================
+   8. AJUSTES EXCLUSIVOS PARA ENCUADRE EN CELULARES
+   ========================================================================== */
+@media (max-width: 767px) {
+    /* Si a la foto se le corta la cabeza, usá esta clase (empuja la foto hacia abajo) */
+    .encuadre-arriba img {
+        object-position: center top !important;
+    }
+
+    /* Si querés que enfoque un poquito más abajo del centro */
+    .encuadre-abajo img {
+        object-position: center bottom !important;
+    }
+
+    /* Si querés graduarlo fino con porcentajes (ej: 25% desde arriba) */
+    .encuadre-medio-alto img {
+        object-position: center 25% !important;
+    }
+    /* Esto se aplica SOLO en celulares */
+
+    .hero-title span {
+        display: block; /* Fuerza el salto de línea en celulares */
+        width: 100%;
+    }
+    
+    .hero-connector {
+        font-size: 0.8em; /* Hace el '&' un poquito más sutil si querés */
+        margin: 5px 0;    /* Le da un toque de espacio arriba y abajo */
+    }
+
+}
