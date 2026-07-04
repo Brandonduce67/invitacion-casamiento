@@ -505,3 +505,17 @@ body {
         font-size: 0.55rem !important;
     }
 }
+/* ==========================================================================
+   11. AJUSTES DE ESPACIADOS PARA EVITAR BACHES BLANCOS
+   ========================================================================== */
+.gift-section {
+    padding-bottom: 20px !important;
+}
+
+.gift-section .divider {
+    margin: 15px auto 0 auto !important;
+}
+
+.rsvp-section {
+    padding-top: 40px !important;
+}
