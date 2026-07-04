@@ -438,9 +438,10 @@ body {
 }
 
 /* ==========================================================================
-   9. CONTROL DE IMÁGENES RESPONSIVE (PC / CELULAR)
+   9. CONTROL DE IMÁGENES RESPONSIVE (PC / CELULAR CORREGIDO)
    ========================================================================== */
-/* Por defecto (en celulares): ocultamos las de PC y mostramos las de celu */
+
+/* Por defecto (en celulares verticales): ocultamos PC y mostramos celu */
 .solo-pc { 
     display: none !important; 
 }
@@ -448,8 +449,9 @@ body {
     display: block !important; 
 }
 
-/* En pantallas grandes (Computadoras) */
-@media (min-width: 768px) {
+/* En pantallas grandes (Computadoras y Tablets) */
+/* Agregamos un filtro extra: que el ancho sea mayor a 1024px, asegurando que sea PC */
+@media (min-width: 1024px) {
     .solo-pc { 
         display: block !important; 
     }
