@@ -459,3 +459,49 @@ body {
         display: none !important; 
     }
 }
+
+/* ==========================================================================
+   10. AJUSTES ESPECIALES PARA CELULARES DE COSTADO (HORIZONTAL)
+   ========================================================================== */
+@media (max-width: 900px) and (orientation: landscape) {
+    .hero {
+        height: auto; /* Permite que la pantalla estire si es necesario y no corte nada */
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 2rem !important; /* Achica el título para que entre en una línea */
+        margin-bottom: 8px !important;
+    }
+
+    .hero-title span {
+        display: inline !important; /* Evita que los nombres salten de línea para ahorrar espacio */
+    }
+
+    .hero-connector {
+        margin: 0 5px !important;
+    }
+
+    .hero-date-text {
+        font-size: 0.9rem !important;
+        margin-bottom: 10px;
+    }
+
+    .countdown-container {
+        margin-top: 10px !important;
+        gap: 5px !important;
+    }
+
+    .countdown-box {
+        width: 55px !important; /* Cajitas más compactas */
+        padding: 4px 2px !important;
+    }
+
+    .countdown-number {
+        font-size: 1rem !important;
+    }
+
+    .countdown-label {
+        font-size: 0.55rem !important;
+    }
+}
