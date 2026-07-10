@@ -1,101 +1,5 @@
-// ==========================================
-// 🔑 CONFIGURACIÓN EXCLUSIVA DE CLOUDINARY
-// ==========================================
-const CLOUD_NAME = 'pd33pfq4'; 
-const UPLOAD_PRESET = 'boda_preset'; 
-const EVENT_TAG = 'boda_elias_naara'; // Etiqueta mágica para enlazar las fotos de todos
-
 // ==========================================================================
-// 1. FUNCIONES GLOBALES DE NAVEGACIÓN Y VISOR (Accesibles por atributos onclick)
-// ==========================================================================
-function cambiarPestana(pestana) {
-    // Control de botones activos en la barra superior
-    document.getElementById('btn-inicio').classList.toggle('active', pestana === 'inicio');
-    document.getElementById('btn-subir').classList.toggle('active', pestana === 'subir');
-    document.getElementById('btn-galeria').classList.toggle('active', pestana === 'galeria');
-    
-    // Mostrar/Ocultar los bloques contenedores principales
-    document.getElementById('seccion-inicio').classList.toggle('oculto', pestana !== 'inicio');
-    document.getElementById('seccion-subir').classList.toggle('oculto', pestana !== 'subir');
-    document.getElementById('seccion-galeria').classList.toggle('oculto', pestana !== 'galeria');
-    
-    // Renderizar la grilla optimizada al entrar al Muro (Trayendo la lista global)
-    if (pestana === 'galeria') {
-        renderizarGaleria();
-    }
-}
-
-async function renderizarGaleria() {
-    const contenedorGaleria = document.getElementById('contenedor-galeria');
-    if (!contenedorGaleria) return;
-
-    // Ponemos un estado de carga limpio
-    contenedorGaleria.innerHTML = '<p class="sin-fotos-alerta">🔄 Cargando el Muro en vivo...</p>';
-
-    try {
-        // Hacemos el fetch directo a la lista pública de Cloudinary usando el TAG.
-        // El timestamp (?b=...) rompe el caché del navegador para que siempre traiga lo último de la fiesta.
-        const response = await fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/${EVENT_TAG}.json?b=${new Date().getTime()}`);
-        
-        if (!response.ok) {
-            // Si da error o 404 es porque todavía nadie subió fotos con esa etiqueta
-            contenedorGaleria.innerHTML = `
-                <p class="sin-fotos-alerta">
-                    Todavía nadie subió fotos al muro.<br>¡Sé el primero en compartir! 📸
-                </p>`;
-            return;
-        }
-
-        const data = await response.json();
-
-        if (!data.resources || data.resources.length === 0) {
-            contenedorGaleria.innerHTML = `
-                <p class="sin-fotos-alerta">
-                    Todavía nadie subió fotos al muro.<br>¡Sé el primero en compartir! 📸
-                </p>`;
-            return;
-        }
-
-        // Limpiamos el contenedor antes de dibujar las fotos de todos
-        contenedorGaleria.innerHTML = '';
-
-        // Ordenamos cronológicamente para que las fotos nuevitas salgan arriba de todo
-        const fotosOrdenadas = data.resources.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-
-        fotosOrdenadas.forEach(foto => {
-            // Construimos la URL original en HD para el visor modal
-            const urlOriginal = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v${foto.version}/${foto.public_id}.${foto.format}`;
-            
-            // Construimos la URL optimizada al vuelo para la miniatura de la grilla
-            const urlOptimizada = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_300,c_scale,q_auto,f_auto/v${foto.version}/${foto.public_id}.${foto.format}`;
-
-            const item = document.createElement('div');
-            item.className = 'galeria-item';
-            item.innerHTML = `<img src="${urlOptimizada}" alt="Foto Boda" loading="lazy">`;
-            
-            // Al interactuar, abre la imagen original en alta definición usando tu visor modal
-            item.onclick = () => abrirVisor(urlOriginal);
-            contenedorGaleria.appendChild(item);
-        });
-
-    } catch (error) {
-        console.error('Error al renderizar el muro:', error);
-        contenedorGaleria.innerHTML = '<p class="sin-fotos-alerta">❌ Error de conexión al cargar la galería.</p>';
-    }
-}
-
-function abrirVisor(urlOriginal) {
-    document.getElementById('modal-img').src = urlOriginal;
-    document.getElementById('link-descarga').href = urlOriginal;
-    document.getElementById('foto-modal').classList.remove('oculto');
-}
-
-function cerrarVisor() {
-    document.getElementById('foto-modal').classList.add('oculto');
-}
-
-// ==========================================================================
-// 2. INICIALIZACIÓN DE COMPONENTES DE LA INVITACIÓN (Al cargar el DOM)
+// 1. INICIALIZACIÓN DE COMPONENTES DE LA INVITACIÓN (Al cargar el DOM)
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('wedding-form');
@@ -156,51 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // INTERCEPCIÓN Y SUBIDA DE IMÁGENES A CLOUDINARY (EN PARALELO CON TAG GLOBAL)
-    const fileInput = document.getElementById('fotos-input');
-    const statusCarga = document.getElementById('status-carga');
-
-    if (fileInput) {
-        fileInput.addEventListener('change', async (e) => {
-            const archivos = e.target.files;
-            if (archivos.length === 0) return;
-
-            statusCarga.innerHTML = `<span class="txt-loading">🔄 Subiendo ${archivos.length} archivo(s)...<br>Mantené esta pestaña abierta.</span>`;
-
-            // Procesamiento asíncrono en lote utilizando Promesas
-            const promesasSubida = Array.from(archivos).map(async (file) => {
-                const formData = new FormData();
-                formData.append('file', file);
-                formData.append('upload_preset', UPLOAD_PRESET);
-                formData.append('tags', EVENT_TAG); // <-- LE AGREGAMOS EL TAG EN LA SUBIDA DE LOTES
-
-                const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (!response.ok) throw new Error('Fallo en transferencia Cloudinary');
-                
-                const data = await response.json();
-                return data.secure_url; 
-            });
-
-            try {
-                await Promise.all(promesasSubida);
-                
-                // Eliminamos el guardado en localStorage porque ahora la galería lee Cloudinary directamente
-                statusCarga.innerHTML = `<span class="txt-success">🎉 ¡Subido con éxito al Muro!<br>Andá a la pestaña "Galería" para ver las fotos de todos. ❤️</span>`;
-            } catch (error) {
-                console.error('Error Cloudinary:', error);
-                statusCarga.innerHTML = `<span class="txt-error">❌ Hubo un error al subir los archivos. Reintentá en unos instantes.</span>`;
-            }
-
-            fileInput.value = ''; // Blanqueamos el input
-        });
-    }
-
     // ==========================================================================
-    // 3. LÓGICA DEL RELOJ DE CUENTA REGRESIVA
+    // 2. LÓGICA DEL RELOJ DE CUENTA REGRESIVA
     // ==========================================================================
     const weddingDate = new Date(2026, 9, 9, 18, 30, 0).getTime();
 
@@ -237,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 
     // ==========================================================================
-    // 4. LÓGICA DEL CARRUSEL AUTOMÁTICO RESPONSIVE
+    // 3. LÓGICA DEL CARRUSEL AUTOMÁTICO RESPONSIVE
     // ==========================================================================
     let currentSlide = 0;
     const slideInterval = 4000;

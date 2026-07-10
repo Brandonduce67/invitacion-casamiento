@@ -18,307 +18,273 @@
   </head>
   <body>
 
-    <nav class="nav-boda">
-        <button class="nav-btn active" id="btn-inicio" onclick="cambiarPestana('inicio')">🏠 Inicio</button>
-        <button class="nav-btn" id="btn-subir" onclick="cambiarPestana('subir')">📸 Subir Foto</button>
-        <button class="nav-btn" id="btn-galeria" onclick="cambiarPestana('galeria')">✨ Galería</button>
-    </nav>
+    <header class="hero">
+      <div class="carrusel-slides">
+        <div class="slide active solo-pc">
+          <img src="img/foto1pc.png" alt="Boda PC 1">
+        </div>
+        <div class="slide active solo-celu">
+          <img src="img/foto1celu.png" alt="Boda Celu 1">
+        </div>
 
-    <div id="seccion-inicio">
-        <header class="hero">
-          <div class="carrusel-slides">
-            <div class="slide active solo-pc">
-              <img src="img/foto1pc.png" alt="Boda PC 1">
-            </div>
-            <div class="slide active solo-celu">
-              <img src="img/foto1celu.png" alt="Boda Celu 1">
-            </div>
+        <div class="slide solo-pc">
+          <img src="img/foto2pc.png" alt="Boda PC 2">
+        </div>
+        <div class="slide solo-celu">
+          <img src="img/foto2celu.png" alt="Boda Celu 2">
+        </div>
+        
+        <div class="slide solo-pc">
+          <img src="img/foto4pc.png" alt="Boda PC 3">
+        </div>
+        <div class="slide solo-celu">
+          <img src="img/foto4celu.png" alt="Boda Celu 3">
+        </div>
 
-            <div class="slide solo-pc">
-              <img src="img/foto2pc.png" alt="Boda PC 2">
-            </div>
-            <div class="slide solo-celu">
-              <img src="img/foto2celu.png" alt="Boda Celu 2">
-            </div>
-            
-            <div class="slide solo-pc">
-              <img src="img/foto4pc.png" alt="Boda PC 2">
-            </div>
-            <div class="slide solo-celu">
-              <img src="img/foto4celu.png" alt="Boda Celu 2">
-            </div>
+        <div class="slide solo-pc">
+          <img src="img/foto5pc.png" alt="Boda PC 4">
+        </div>
+        <div class="slide solo-celu">
+          <img src="img/foto5celu.png" alt="Boda Celu 4">
+        </div>
 
-            <div class="slide solo-pc">
-              <img src="img/foto5pc.png" alt="Boda PC 2">
-            </div>
-            <div class="slide solo-celu">
-              <img src="img/foto5celu.png" alt="Boda Celu 2">
-            </div>
+        <div class="slide solo-pc">
+          <img src="img/foto6pc.png" alt="Boda PC 5">
+        </div>
+        <div class="slide solo-celu">
+          <img src="img/foto6celu.png" alt="Boda Celu 5">
+        </div>
 
-            <div class="slide solo-pc">
-              <img src="img/foto6pc.png" alt="Boda PC 2">
-            </div>
-            <div class="slide solo-celu">
-              <img src="img/foto6celu.png" alt="Boda Celu 2">
-            </div>
+        <div class="slide solo-pc">
+          <img src="img/foto10pc.png" alt="Boda PC 6">
+        </div>
+        <div class="slide solo-celu">
+          <img src="img/foto10celu.png" alt="Boda Celu 6">
+        </div>
+      </div>
 
-            <div class="slide solo-pc">
-              <img src="img/foto10pc.png" alt="Boda PC 2">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="hero-subtitle">¡Nos Casamos!</p>
+        <h1 class="hero-title">
+          <span>Elias López</span>
+          <span class="hero-connector">&</span>
+          <span>Naara Baez</span>
+        </h1>
+        <p class="hero-date-text">Falta muy poco para el gran día</p>
+
+        <div class="countdown-container">
+          <div class="countdown-box">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section story-section">
+      <div class="container text-center">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p class="story-text">
+          "Hay momentos en la vida que son inolvidables, y compartirlos con las
+          personas que más queremos los hace aún más especiales. Después de
+          recorrer un camino hermoso juntos, decidimos dar el paso más
+          importante y queremos que seas parte de nuestra gran noche."
+        </p>
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section class="section details-section">
+      <div class="container grid-3">
+        <div class="card">
+          <div class="card-icon">📜</div>
+          <h3 class="card-title">El Civil</h3>
+          <p class="card-info">Viernes 9 de Octubre - Horario a Confirmar!!</p>
+          <p class="card-address">
+            Registro Civil, Bernardo irigoyen 251, Marcos Paz
+          </p>
+          <a
+            href="https://www.google.com/maps/place/Bernardo+de+Irigoyen+251,+B1727AWE+Marcos+Paz,+Provincia+de+Buenos+Aires/@-34.781765,-58.8503748,15z/data=!4m17!1m10!4m9!1m0!1m6!1m2!1s0x95bcec0131215567:0x7b36393b8403ab7b!2sBernardo+de+Irigoyen+251,+B1727AWE+Marcos+Paz,+Provincia+de+Buenos+Aires!2m2!1d-58.8323502!2d-34.7817654!3e0!3m5!1s0x95bcec0131215567:0x7b36393b8403ab7b!8m2!3d-34.7817654!4d-58.8323502!16s%2Fg%2F11xz__t51r?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            class="btn btn-dark"
+            >Ver en Google Maps</a
+          >
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <h3 class="card-title">La Conferencia</h3>
+          <p class="card-info">Viernes 9 de Octubre - Horario a Confirmar!!</p>
+          <p class="card-address">
+            Lugar a Confirmar!! <br><br/>
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            class="btn btn-dark"
+            >Ver en Google Maps</a
+          >
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🥂</div>
+          <h3 class="card-title">La Fiesta</h3>
+          <p class="card-info">Sabado 10 de Octubre - 20:30 hs</p>
+          <p class="card-address">
+            Club Social y Deportivo Mariano Acosta, Crisalide, Cnel. Salvadores
+            &, Mariano Acosta, Provincia de Buenos Aires
+          </p>
+          <a
+            href="https://www.google.com/maps/dir//Club+Social+y+Deportivo+Mariano+Acosta,+Crisalide,+Cnel.+Salvadores+%26,+Mariano+Acosta,+Provincia+de+Buenos+Aires/@-34.7194311,-58.7917545,17z/data=!4m17!1m7!3m6!1s0x95bceb1bf1b5d6d1:0xae614ad91856118a!2sClub+Social+y+Deportivo+Mariano+Acosta!8m2!3d-34.7194311!4d-58.7917545!16s%2Fg%2F11n34ptmf5!4m8!1m0!1m5!1m1!1s0x95bceb1bf1b5d6d1:0xae614ad91856118a!2m2!1d-58.7917545!2d-34.7194311!3e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            class="btn btn-dark"
+            >Cómo llegar</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="section gift-section">
+      <div class="container text-center">
+        <div class="card-icon">✨</div>
+        <h2 class="section-title">Para Nuestro Comienzo Juntos</h2>
+        <p class="story-text mb-3">
+          "El mejor presente es tu compañía en nuestra gran noche. Pero si además deseás colaborar 
+          con el inicio de nuestro hogar y proyectos juntos, podés hacerlo a través de nuestro alias."
+        </p>
+        
+        <div class="container-small">
+          <div class="card gift-card">
+            <p class="gift-subtitle">Datos Bancarios</p>
+            <div class="gift-info-box">
+              <p><strong>CBU / CVU:</strong> <span class="copy-text">0000003100010943989760</span></p>
+              <p><strong>Alias:</strong> <span class="copy-text">eliasynaara</span></p>
+              <p><strong>Titular:</strong> Elias López / Naara Baez</p>
             </div>
-            <div class="slide solo-celu">
-              <img src="img/foto10celu.png" alt="Boda Celu 2">
-            </div>
+            <p class="gift-footnote">¡Muchas gracias por formar parte de nuestras vidas! ❤️</p>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section class="section rsvp-section">
+      <div class="container-small">
+        <div class="text-center mb-3" id="rsvp-header">
+          <div class="card-icon">✨</div>
+          <h2 class="section-title">Confirmación de Asistencia</h2>
+          <p class="section-subtitle">
+            Por favor, confirmanos tu presencia lo antes posible ❤️.
+          </p>
+        </div>
+
+        <form class="rsvp-form" id="wedding-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Tu Nombre y Apellido</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Ej: Juan Pérez"
+              class="form-input"
+            />
           </div>
 
-          <div class="hero-overlay"></div>
-
-          <div class="hero-content">
-            <p class="hero-subtitle">¡Nos Casamos!</p>
-            <h1 class="hero-title">
-              <span>Elias López</span>
-              <span class="hero-connector">&</span>
-              <span>Naara Baez</span>
-            </h1>
-            <p class="hero-date-text">Falta muy poco para el gran día</p>
-
-            <div class="countdown-container">
-              <div class="countdown-box">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">Días</span>
-              </div>
-              <div class="countdown-box">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">Horas</span>
-              </div>
-              <div class="countdown-box">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">Min</span>
-              </div>
-              <div class="countdown-box">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">Seg</span>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <section class="section story-section">
-          <div class="container text-center">
-            <h2 class="section-title">Nuestra Historia</h2>
-            <p class="story-text">
-              "Hay momentos en la vida que son inolvidables, y compartirlos con las
-              personas que más queremos los hace aún más especiales. Después de
-              recorrer un camino hermoso juntos, decidimos dar el paso más
-              importante y queremos que seas parte de nuestra gran noche."
-            </p>
-            <div class="divider"></div>
-          </div>
-        </section>
-
-        <section class="section details-section">
-          <div class="container grid-3">
-            <div class="card">
-              <div class="card-icon">📜</div>
-              <h3 class="card-title">El Civil</h3>
-              <p class="card-info">Viernes 9 de Octubre - Horario a Confirmar!!</p>
-              <p class="card-address">
-                Registro Civil, Bernardo irigoyen 251, Marcos Paz
-              </p>
-              <a
-                href="https://www.google.com/maps/place/Bernardo+de+Irigoyen+251,+B1727AWE+Marcos+Paz,+Provincia+de+Buenos+Aires/@-34.781765,-58.8503748,15z/data=!4m17!1m10!4m9!1m0!1m6!1m2!1s0x95bcec0131215567:0x7b36393b8403ab7b!2sBernardo+de+Irigoyen+251,+B1727AWE+Marcos+Paz,+Provincia+de+Buenos+Aires!2m2!1d-58.8323502!2d-34.7817654!3e0!3m5!1s0x95bcec0131215567:0x7b36393b8403ab7b!8m2!3d-34.7817654!4d-58.8323502!16s%2Fg%2F11xz__t51r?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                class="btn btn-dark"
-                >Ver en Google Maps</a
-              >
-            </div>
-
-            <div class="card">
-              <div class="card-icon">💼</div>
-              <h3 class="card-title">La Conferencia</h3>
-              <p class="card-info">Viernes 9 de Octubre - Horario a Confirmar!!</p>
-              <p class="card-address">
-                Lugar a Confirmar!! <br><br/>
-              </p>
-              <a
-              href="#"
-              target="_blank"
-                class="btn btn-dark"
-                >Ver en Google Maps</a
-              >
-            </div>
-
-            <div class="card">
-              <div class="card-icon">🥂</div>
-              <h3 class="card-title">La Fiesta</h3>
-              <p class="card-info">Sabado 10 de Octubre - 20:30 hs</p>
-              <p class="card-address">
-                Club Social y Deportivo Mariano Acosta, Crisalide, Cnel. Salvadores
-                &, Mariano Acosta, Provincia de Buenos Aires
-              </p>
-              <a
-                href="https://www.google.com/maps/dir//Club+Social+y+Deportivo+Mariano+Acosta,+Crisalide,+Cnel.+Salvadores+%26,+Mariano+Acosta,+Provincia+de+Buenos+Aires/@-34.7194311,-58.7917545,17z/data=!4m17!1m7!3m6!1s0x95bceb1bf1b5d6d1:0xae614ad91856118a!2sClub+Social+y+Deportivo+Mariano+Acosta!8m2!3d-34.7194311!4d-58.7917545!16s%2Fg%2F11n34ptmf5!4m8!1m0!1m5!1m1!1s0x95bceb1bf1b5d6d1:0xae614ad91856118a!2m2!1d-58.7917545!2d-34.7194311!3e3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                class="btn btn-dark"
-                >Cómo llegar</a
-              >
-            </div>
-          </div>
-        </section>
-
-        <section class="section gift-section">
-          <div class="container text-center">
-            <div class="card-icon">✨</div>
-            <h2 class="section-title">Para Nuestro Comienzo Juntos</h2>
-            <p class="story-text mb-3">
-              "El mejor presente es tu compañía en nuestra gran noche. Pero si además deseás colaborar 
-              con el inicio de nuestro hogar y proyectos juntos, podés hacerlo a través de nuestro alias."
-            </p>
-            
-            <div class="container-small">
-              <div class="card gift-card">
-                <p class="gift-subtitle">Datos Bancarios</p>
-                <div class="gift-info-box">
-                  <p><strong>CBU / CVU:</strong> <span class="copy-text">0000003100010943989760</span></p>
-                  <p><strong>Alias:</strong> <span class="copy-text">eliasynaara</span></p>
-                  <p><strong>Titular:</strong> Elias López / Naara Baez</p>
-                </div>
-                <p class="gift-footnote">¡Muchas gracias por formar parte de nuestras vidas! ❤️</p>
-              </div>
-            </div>
-            <div class="divider"></div>
-          </div>
-        </section>
-
-        <section class="section rsvp-section">
-          <div class="container-small">
-            <div class="text-center mb-3" id="rsvp-header">
-              <div class="card-icon">✨</div>
-              <h2 class="section-title">Confirmación de Asistencia</h2>
-              <p class="section-subtitle">
-                Por favor, confirmanos tu presencia lo antes posible ❤️.
-              </p>
-            </div>
-
-            <form class="rsvp-form" id="wedding-form">
-              <div class="form-group">
-                <label for="name" class="form-label">Tu Nombre y Apellido</label>
+          <div class="form-group">
+            <label class="form-label">¿Asistirá al evento?</label>
+            <div class="radio-group">
+              <label class="radio-label">
                 <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Ej: Juan Pérez"
-                  class="form-input"
+                  type="checkbox"
+                  name="attendance"
+                  value="si"
+                  checked
+                  class="form-radio"
                 />
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">¿Asistirá al evento?</label>
-                <div class="radio-group">
-                  <label class="radio-label">
-                    <input
-                      type="radio"
-                      name="attendance"
-                      value="si"
-                      checked
-                      class="form-radio"
-                    />
-                    <span>Sí, ¡allí estaré!</span>
-                  </label>
-                  <label class="radio-label">
-                    <input
-                      type="radio"
-                      name="attendance"
-                      value="no"
-                      class="form-radio"
-                    />
-                    <span>No podré asistir</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label"
-                  >Mensaje para los novios e Información Importante</label
-                >
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Dejales un lindo saludo. (Si tenés alguna alergia grave o restricción alimenticia extrema, por favor aclaralo acá)."
-                  class="form-textarea"
-                ></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block">
-                Confirmar Asistencia
-              </button>
-            </form>
-
-            <div
-              id="success-message"
-              style="display: none; text-align: center; padding: 30px 10px"
-            >
-              <h3
-                style="
-                  font-family: var(--font-serif);
-                  color: var(--accent-color);
-                  font-size: 2rem;
-                  margin-bottom: 15px;
-                "
-              >
-                ¡Muchas gracias!
-              </h3>
-              <p
-                style="
-                  font-size: 1.1rem;
-                  color: var(--text-main);
-                  margin-bottom: 5px;
-                "
-              >
-                Tu confirmación fue recibida con éxito.
-              </p>
-              <p
-                style="
-                  font-family: var(--font-serif);
-                  font-style: italic;
-                  font-size: 1.3rem;
-                  color: var(--accent-color);
-                  margin-top: 20px;
-                "
-              >
-                ¡Los esperamos para celebrar juntos! 🥂
-              </p>
+                <span>Sí, ¡allí estaré!</span>
+              </label>
+              <label class="radio-label">
+                <input
+                  type="checkbox"
+                  name="attendance"
+                  value="no"
+                  class="form-radio"
+                />
+                <span>No podré asistir</span>
+              </label>
             </div>
           </div>
-        </section>
-    </div>
 
-    <div id="seccion-subir" class="seccion-boda oculto">
-        <div class="card-subida">
-            <h2>Compartí tus Momentos 📸</h2>
-            <p>Seleccioná todas las fotos y videos de la fiesta que quieras regalarle a los novios. ¡Se suben en paralelo!</p>
-            
-            <label for="fotos-input" class="btn-elegir-fotos">📁 Subir fotos del Celu</label>
-            <input type="file" id="fotos-input" accept="image/*,video/*" multiple style="display: none;">
-            
-            <div id="status-carga"></div>
+          <div class="form-group">
+            <label for="message" class="form-label"
+              >Mensaje para los novios e Información Importante</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Dejales un lindo saludo. (Si tenés alguna alergia grave o restricción alimenticia extrema, por favor aclaralo acá)."
+              class="form-textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Confirmar Asistencia
+          </button>
+        </form>
+
+        <div
+          id="success-message"
+          style="display: none; text-align: center; padding: 30px 10px"
+        >
+          <h3
+            style="
+              font-family: var(--font-serif);
+              color: var(--accent-color);
+              font-size: 2rem;
+              margin-bottom: 15px;
+            "
+          >
+            ¡Muchas gracias!
+          </h3>
+          <p
+            style="
+              font-size: 1.1rem;
+              color: var(--text-main);
+              margin-bottom: 5px;
+            "
+          >
+            Tu confirmación fue recibida con éxito.
+          </p>
+          <p
+            style="
+              font-family: var(--font-serif);
+              font-style: italic;
+              font-size: 1.3rem;
+              color: var(--accent-color);
+              margin-top: 20px;
+            "
+          >
+            ¡Los esperamos para celebrar juntos! 🥂
+          </p>
         </div>
-    </div>
-
-    <div id="seccion-galeria" class="seccion-boda oculto">
-        <h2 class="titulo-galeria">Muro de la Fiesta 🥂</h2>
-        <div class="galeria-grid" id="contenedor-galeria">
-            </div>
-    </div>
-
-    <div id="foto-modal" class="modal-visor oculto">
-        <img id="modal-img" src="" alt="Vista grande">
-        <div class="modal-buttons">
-            <button class="btn-modal btn-cerrar" onclick="cerrarVisor()">Cerrar</button>
-            <a id="link-descarga" class="btn-modal btn-descargar" href="#" download="foto_boda.jpg">Descargar Alta Calidad ⬇️</a>
-        </div>
-    </div>
+      </div>
+    </section>
 
     <footer class="footer">
       <p class="footer-title">Elias López & Naara Baez</p>
